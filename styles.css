@@ -1,0 +1,167 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #fff;
+  font-family: "Chathura", sans-serif;
+  font-size: 25px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+/* ===
+ board
+=== */
+.grid-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -135px;
+  margin-left: -135px;
+  width: 270px;
+  height: 270px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "t t t"
+                       "t t t"
+                       "t t t"
+}
+#blocks {
+  grid-area: t;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.tic {
+  text-align: center;
+  line-height: 100%;
+  font-family: monospace;
+  font-size: 58px;
+  border: 2px solid #fff;
+  background-color: #aaa;
+}
+/* ==========================
+ overlay at start/end of game
+========================== */
+#overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: visibility 0.5s, opacity 0.5s;
+}
+.begin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px ;
+  height: 300px;
+  width: 300px;
+}
+.begin h1, h2{
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+#result{
+  text-align: center;
+  width: inherit;
+  display: inline-block;
+}
+.type-choice{
+  display: inline-block;
+  width: 25%;
+  padding: 0 5%;
+  border-radius: 4px;
+}
+.type-choice:hover{
+  cursor: pointer;
+}
+.type-choice.highlighted{
+  color: white;
+  background-color: black;
+}
+#choice-x{
+  float: left;
+  padding-left: 75px;
+}
+#choice-o{
+  float: right;
+  padding-right: 75px;
+}
+#choose::before{
+  content: "";
+  display: block;
+  clear: both;
+  height: 25px;
+}
+#choose::after{
+  content: "";
+  display: block;
+  clear: both;
+  height: 25px;
+}
+#choose > * {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+}
+
+
+/* =========
+ shapes o, x
+========= */
+.box{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+/* == o == */
+.circle{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  border: 5px solid black;
+  border-radius: 100%;
+}
+/* == x == */
+.box>hr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -2.5px 0 0 -30px;
+  width: 55px;
+}
+.rotate-left {
+  transform: rotate(-45deg);
+  border: 2.5px solid black;
+}
+.rotate-right {
+  transform: rotate(45deg);
+  border: 2.5px solid black;
+}
+#start{
+  width: 100px;
+  margin-left: 100px;
+}
+
+.choice *, .box-o *, .box-x *{
+  transition: border-color 0.5s, color 0.5s;
+}
+.choice:hover *{
+  border-color: blue;
+  color: blue;
+  cursor: pointer;
+}
+.win-border>*{
+  border-color: #7cfc00;
+}
+.lose-border>*{
+  border-color: #f00;
+}
+.hidden{
+  display: none;
+}

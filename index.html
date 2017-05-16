@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>a game of tic-tac-toe</title>
+    <link href="https://fonts.googleapis.com/css?family=Chathura" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="game.js"></script>
+  </head>
+  <body>
+    <!-- Game board -->
+    <div class="grid-container">
+      <div class="grid-member" id="blocks">
+        <div class="tic" id="0"></div>
+        <div class="tic" id="1"></div>
+        <div class="tic" id="2"></div>
+        <div class="tic" id="3"></div>
+        <div class="tic" id="4"></div>
+        <div class="tic" id="5"></div>
+        <div class="tic" id="6"></div>
+        <div class="tic" id="7"></div>
+        <div class="tic" id="8"></div>
+      </div>
+    </div>
+    <!-- Div to hide board when not active -->
+    <div id="overlay">
+      <div class="begin">
+        <div id="result">
+          <h1 id="result-message">Fight!</h1>
+        </div>
+        <div id="hum-or-ai">
+          <h2 id="game-type"><span class="type-choice highlighted" id="ai">Comp</span><span class= "type-choice" id="hum">Human</span></h1>
+        </div>
+        <div class="toggle" id="choose">
+          <div class="choice" id="choice-x">
+            <div class="box" id="box-x">
+              <hr class="rotate-left" /><hr class="rotate-right" />
+            </div>
+          </div>
+          <div class="choice" id="choice-o">
+            <div class="box" id="box-o">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="toggle hidden" id="start-human">
+          <div class="choice" id="start">
+            <h1 id="begin">Begin</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
